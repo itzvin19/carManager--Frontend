@@ -1,75 +1,110 @@
-# React + TypeScript + Vite
+# 🚗 Frontend - Gestión de Autos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación frontend desarrollada con **React + Vite + Bun**, que consume una API REST para la gestión de autos (CRUD, dashboard e insights).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Tecnologías utilizadas
 
-## React Compiler
+* React
+* Vite
+* Bun
+* Axios 
+* Zod
+* Tailwind CSS
+* React Query
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ⚙️ Requisitos previos
 
-## Expanding the ESLint configuration
+Asegúrate de tener instalado:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Node.js (opcional si usas Bun exclusivamente)
+* Bun → https://bun.sh/
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔐 Variables de entorno
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Antes de ejecutar el proyecto, debes crear un archivo:
+
+```id="envfile"
+.env
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+En la raíz del proyecto con el siguiente contenido:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env id="envvars"
+VITE_API_URL=https://localhost:7053/api
+VITE_FILE_SERVER=https://localhost:7053
 ```
+
+> ⚠️ Estas variables apuntan al backend local, asegúrate de que la API esté corriendo en ese puerto.
+
+---
+
+## ▶️ Ejecución del proyecto
+
+1. Clonar el repositorio:
+
+```id="clone"
+git clone https://github.com/itzvin19/carManager--Frontend
+cd carManager--Frontend
+```
+
+2. Instalar dependencias:
+
+```id="install"
+bun install
+```
+
+3. Ejecutar el servidor de desarrollo:
+
+```id="run"
+bun dev
+```
+
+---
+
+## 🌐 URL de la aplicación
+
+La aplicación estará disponible en:
+
+```id="url"
+http://localhost:5173
+```
+
+> ✅ Este puerto está habilitado en el backend mediante configuración de CORS.
+
+---
+
+## 🔌 Conexión con la API
+
+El frontend consume los endpoints definidos en:
+
+```id="apiurl"
+https://localhost:7053/api
+```
+
+Asegúrate de que el backend esté corriendo antes de iniciar el frontend.
+
+---
+
+## 🧪 Notas adicionales
+
+* La aplicación incluye:
+
+  * Listado de autos
+  * Creación, edición y eliminación
+  * Filtros y paginación 
+  * Dashboard con métricas
+
+* Validaciones implementadas en formularios
+
+
+---
+
+## 👨‍💻 Autor
+
+Kevin Carrasco
